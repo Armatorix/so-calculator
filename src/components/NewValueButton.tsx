@@ -5,7 +5,7 @@ import { productionsState } from '../store';
 
 export function NewValueButton() {
     const [productions, setProductions] = useRecoilState(productionsState)
-    return <Button variant="outlined" onClick={() => {
+    return <Button fullWidth variant="outlined" onClick={() => {
         setProductions(productions.concat({ amount: 1 } as Production))
     }}>Dodaj uprawe/produkcje</Button>
 }

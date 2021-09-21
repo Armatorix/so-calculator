@@ -17,10 +17,12 @@ export function CSVDownload() {
     return <CSVLink
         data={data}
         style={{
+            width: "100%",
             textDecoration: 'none'
         }}
         filename="so-wielkosc-ekonomiczna.csv" >
         <Button
+            fullWidth
             variant='outlined'>
             Pobierz CSV
         </Button>
