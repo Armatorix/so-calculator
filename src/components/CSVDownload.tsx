@@ -6,15 +6,14 @@ export function CSVDownload() {
     const productions = useRecoilValue(productionsState)
     const region = useRecoilValue(regionState)
     let data = [["Nazwa", "Przelicznik", "Ilość", "Wartość [€]"]]
-    let total = 0
     productions.forEach(prod => {
         if (prod.converter !== undefined) {
             let convRate = prod.converter.values[region.group]
             let worth = prod.amount * convRate
-            total += worth
-            data = data.concat([[prod.converter.name, convRate.toString(), prod.amount.toString(), Number(worth).toFixed(2)]]);
+            data = data.concat([[prod.converter.name, convRate.toString(), prod.amount.toString(), "=" + Number(worth).toFixed(2)]]);
         }
     });
+    data = data.concat([["Suma", "", "", `=SUMA(D2: D${data.length})`]]);
     return <CSVLink
         data={data}
         style={{
