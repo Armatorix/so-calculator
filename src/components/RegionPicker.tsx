@@ -1,6 +1,6 @@
 import { MenuItem, Select, Typography } from "@mui/material"
 import { useRecoilState } from "recoil"
-import { Region, Regions } from "../models/Regions"
+import { Regions } from "../models/Regions"
 import { regionState } from "../store"
 export function RegionPicker() {
     const [region, setRegion] = useRecoilState(regionState)

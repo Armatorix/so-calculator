@@ -1,6 +1,5 @@
-import { Autocomplete, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Typography } from "@mui/material"
-import { useRecoilState, useRecoilValue } from "recoil"
-import { Converters } from "../models/Converters"
+import { Typography } from "@mui/material"
+import { useRecoilValue } from "recoil"
 import { productionsState, regionState } from "../store"
 
 export function Summary() {

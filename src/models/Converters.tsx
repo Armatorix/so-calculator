@@ -1,5 +1,3 @@
-import { MenuItem } from "@mui/material"
-
 export interface Converter {
     name: string
     values: number[]
