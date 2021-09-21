@@ -1,4 +1,12 @@
-import React from "react"
+import { Button } from '@mui/material';
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { Production } from '../models/Production';
+import { productionsState } from '../store';
+
 export function NewValueButton() {
-    return </></>
+    const [productions, setProductions] = useRecoilState(productionsState)
+    return <Button variant="outlined" onClick={() => {
+        setProductions(productions.concat({ amount: 0 } as Production))
+    }}>Dodaj uprawe/produkcje</Button>
+
 }
