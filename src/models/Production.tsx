@@ -1,6 +1,5 @@
 import { Converter } from "./Converters"
 export interface Production {
-    converterId?: number
-    converter: Converter
+    converter: Converter | undefined
     amount: number
 }

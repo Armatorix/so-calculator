@@ -8,5 +8,7 @@ export const regionState = atom({
 
 export const productionsState = atom({
     key: 'productionsState',
-    default: [] as Production[],
+    default: [{
+        amount: 1,
+    }] as Production[],
 })
