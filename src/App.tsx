@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { RecoilRoot } from 'recoil';
 
-import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import { EditableTable } from "./components/EditableTable"
 import { NewValueButton } from "./components/NewValueButton"
 import { RegionPicker } from "./components/RegionPicker"
+import { Regions } from './models/Regions';
 
 
 const App = () => {
@@ -13,12 +13,14 @@ const App = () => {
     { make: "Ford", model: "Mondeo", price: 32 },
     { make: "Porsche", model: "Boxter", price: 72 }
   ]);
+
+  const [region, setRegion] = useState(Regions[0])
   return (
-    <div className="ag-theme-alpine" style={{ height: 400, width: 660 }}>
+    <RecoilRoot>
       <RegionPicker />
-      <NewValueButton data={rowData} dataSetter={setRowData} />
-      <EditableTable data={rowData} />
-    </div>
+      <NewValueButton />
+      <EditableTable />
+    </RecoilRoot>
   );
 };
 

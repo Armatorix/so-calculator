@@ -1,6 +1,9 @@
 import { MenuItem, Select, Typography } from "@mui/material"
-import { Regions } from "../models/Regions"
-export const RegionPicker = () => {
+import { useRecoilState } from "recoil"
+import { Region, Regions } from "../models/Regions"
+import { regionState } from "../store"
+export function RegionPicker() {
+    const [region, setRegion] = useRecoilState(regionState)
     return <>
         <Typography>
             Region
@@ -8,7 +11,10 @@ export const RegionPicker = () => {
         <Select
             variant="outlined"
             autoWidth
-            defaultValue={0}
+            value={region.id}
+            onChange={(e) => {
+                setRegion(Regions[Number(e.target.value)])
+            }}
         >
             {
                 Regions.map((region) => {
