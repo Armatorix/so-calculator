@@ -13,16 +13,24 @@ export function ProductionsTable() {
                 <TableHead>
                     <TableRow>
                         <TableCell>
-                            Uprawa
+                            <Typography variant="h6">
+                                Uprawa
+                            </Typography>
                         </TableCell>
                         <TableCell>
-                            Wartość jednostkowa (na sztuke/hektar) [€]
+                            <Typography variant="h6">
+                                Wartość jednostkowa (na sztuke/hektar) [€]
+                            </Typography>
                         </TableCell>
                         <TableCell>
-                            Ilość
+                            <Typography variant="h6">
+                                Ilość
+                            </Typography>
                         </TableCell>
                         <TableCell>
-                            Wartość [€]
+                            <Typography variant="h6">
+                                Wartość [€]
+                            </Typography>
                         </TableCell>
                     </TableRow>
                 </TableHead>
