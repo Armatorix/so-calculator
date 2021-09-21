@@ -11,22 +11,22 @@ export function ProductionsTable() {
         <Table aria-label="customized table">
             <TableHead>
                 <TableRow>
-                    <TableCell>
+                    <TableCell width="60%">
                         <Typography variant="h6">
                             Uprawa
                         </Typography>
                     </TableCell>
-                    <TableCell>
+                    <TableCell width="15%">
                         <Typography variant="h6">
                             Wartość jednostkowa (na sztuke/hektar) [€]
                         </Typography>
                     </TableCell>
-                    <TableCell>
+                    <TableCell width="10%">
                         <Typography variant="h6">
                             Ilość
                         </Typography>
                     </TableCell>
-                    <TableCell>
+                    <TableCell width="15%">
                         <Typography variant="h6">
                             Wartość [€]
                         </Typography>
