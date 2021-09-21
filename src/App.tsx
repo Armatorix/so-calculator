@@ -1,5 +1,4 @@
 import { Grid, Paper } from '@mui/material';
-import { Box } from '@mui/system';
 import React from 'react';
 import { RecoilRoot } from 'recoil';
 import { CSVDownload } from "./components/CSVDownload";
