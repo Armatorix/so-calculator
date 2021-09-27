@@ -11,5 +11,5 @@ export function Summary() {
             total += Number(prod.amount * prod.converter.values[region.group])
         }
     });
-    return <Typography>{total}</Typography>
+    return <Typography>{total.toFixed(2)}</Typography>
 }

@@ -1,4 +1,4 @@
-import { Grid, List, ListItem, MenuItem, Select, Typography } from "@mui/material"
+import { Grid, List, ListItem, Typography } from "@mui/material"
 export function Intro() {
     return <Grid container item direction="column">
         <Typography variant="h2">Kalkulator wielkości ekonomicznej - SO</Typography>
