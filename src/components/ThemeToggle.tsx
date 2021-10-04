@@ -1,7 +1,7 @@
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
+import { createTheme } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
-import { createTheme } from "@mui/material/styles";
 import * as React from "react";
 
 const themeLocalStorageKey = "theme";
@@ -36,13 +36,20 @@ export default function useToggleColorMode() {
 
   const theme = React.useMemo(
     () =>
-      createTheme({
+      createTheme(mode === lightTheme ? {
         palette: {
+          mode: "light",
           background: {
-            default: mode === lightTheme ? "#FFF" : "#000",
+            default: "#FFF",
           },
-          mode: mode,
         },
+      }: {
+        palette: {
+          mode: "dark",
+          background: {
+            default: "#000",
+          },
+        }
       }),
     [mode]
   );
