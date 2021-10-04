@@ -15,7 +15,7 @@ export default function useToggleColorMode() {
         return lightTheme;
       }
       const storageTheme = localStorage.getItem(themeLocalStorageKey);
-      if (storageTheme == lightTheme || storageTheme == darkTheme) {
+      if (storageTheme === lightTheme || storageTheme === darkTheme) {
         return storageTheme;
       }
       return lightTheme;
@@ -61,5 +61,5 @@ export default function useToggleColorMode() {
     </IconButton>
   );
 
-  return [colorMode, theme, toggleButton];
+  return [theme, toggleButton];
 }

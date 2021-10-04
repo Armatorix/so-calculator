@@ -10,7 +10,7 @@ import { RegionPicker } from "./components/RegionPicker";
 import useToggleColorMode from "./components/ThemeToggle";
 
 const App = () => {
-  const [colorMode, theme, toggleButton] = useToggleColorMode();
+  const [theme, toggleButton] = useToggleColorMode();
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
