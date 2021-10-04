@@ -4,12 +4,31 @@ import IconButton from "@mui/material/IconButton";
 import { createTheme } from "@mui/material/styles";
 import * as React from "react";
 
+const themeLocalStorageKey = "theme";
+const darkTheme = "dark";
+const lightTheme = "light";
+
 export default function useToggleColorMode() {
-  const [mode, setMode] = React.useState<"light" | "dark">("light");
+  const [mode, setMode] = React.useState<typeof lightTheme | typeof darkTheme>(
+    () => {
+      if (localStorage === undefined) {
+        return lightTheme;
+      }
+      const storageTheme = localStorage.getItem(themeLocalStorageKey);
+      if (storageTheme == lightTheme || storageTheme == darkTheme) {
+        return storageTheme;
+      }
+      return lightTheme;
+    }
+  );
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+        setMode((prevMode) => {
+          const newMode = prevMode === lightTheme ? darkTheme : lightTheme;
+          localStorage.setItem(themeLocalStorageKey, newMode);
+          return newMode;
+        });
       },
     }),
     []
@@ -20,7 +39,7 @@ export default function useToggleColorMode() {
       createTheme({
         palette: {
           background: {
-            default: mode === "light" ? "#FFF" : "#000",
+            default: mode === lightTheme ? "#FFF" : "#000",
           },
           mode: mode,
         },
@@ -34,7 +53,7 @@ export default function useToggleColorMode() {
       onClick={colorMode.toggleColorMode}
       color="inherit"
     >
-      {theme.palette.mode === "dark" ? (
+      {theme.palette.mode === darkTheme ? (
         <Brightness7Icon />
       ) : (
         <Brightness4Icon />
