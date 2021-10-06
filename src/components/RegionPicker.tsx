@@ -12,7 +12,6 @@ export function RegionPicker() {
         </Grid>
         <Grid container item xs={8}>
             <Select
-                variant="outlined"
                 fullWidth
                 value={region.id}
                 defaultValue={Regions[0].id}

@@ -68,7 +68,6 @@ export function ProductionsTable() {
                                     id="outlined-number"
                                     label="Ilość"
                                     type="number"
-                                    defaultValue={production.amount}
                                     onChange={(v) => {
                                         setProductions(productions.slice(0, i)
                                             .concat([{
