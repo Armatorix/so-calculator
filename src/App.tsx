@@ -17,11 +17,14 @@ const App = () => {
       <RecoilRoot>
         <Grid
           container
+          alignSelf="center"
           alignItems="center"
+          minWidth="600px"
           width="100%"
           height="100%"
-          padding="3em"
+          paddingY="3em"
           justifyContent="center"
+          
         >
           <Grid
             container
@@ -29,8 +32,8 @@ const App = () => {
             component={Paper}
             direction="column"
             spacing={2}
-            minWidth="500px"
-            width="80%"
+            width="90%"
+            maxWidth="1200px"
             padding="2em"
             alignItems="center"
             justifyContent="center"
