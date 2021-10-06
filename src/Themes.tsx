@@ -7,6 +7,16 @@ export const DarkThemeStyle = createTheme({
     primary: green,
     secondary: green,
   },
+  components: {
+    // FIXME: not working 
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          color: "white"
+        }
+      }
+    }
+  }
 });
 
 export const LightThemeStyle = createTheme({
