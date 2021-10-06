@@ -34,7 +34,7 @@ const App = () => {
           container
           alignSelf="center"
           alignItems="center"
-          minWidth="680px"
+          minWidth="650px"
           width="100%"
           height="100%"
           paddingY="3em"

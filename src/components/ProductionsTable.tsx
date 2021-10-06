@@ -44,7 +44,6 @@ export function ProductionsTable() {
 
                                     getOptionLabel={(opt) => opt.name}
                                     onChange={(e, conv) => {
-                                        console.log(e.type, conv)
                                         setProductions(productions.slice(0, i)
                                             .concat([{
                                                 converter: (conv !== null) ? conv : undefined,
@@ -53,7 +52,6 @@ export function ProductionsTable() {
                                             ])
                                             .concat(productions.slice(i + 1, productions.length)))
                                     }}
-                                    value={production.converter}
                                     renderInput={(params) => {
                                         return <TextField {...params} label="Produkcja/Uprawa" />
                                     }}
