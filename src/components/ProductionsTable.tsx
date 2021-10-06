@@ -11,7 +11,7 @@ export function ProductionsTable() {
         <Table aria-label="customized table">
             <TableHead>
                 <TableRow>
-                    <TableCell width="40%">
+                    <TableCell width="35%">
                         <Typography variant="h6">
                             Uprawa
                         </Typography>
@@ -21,7 +21,7 @@ export function ProductionsTable() {
                             Wartość jednostkowa (na sztuke/hektar) [€]
                         </Typography>
                     </TableCell>
-                    <TableCell width="15%">
+                    <TableCell width="20%">
                         <Typography variant="h6">
                             Ilość
                         </Typography>
