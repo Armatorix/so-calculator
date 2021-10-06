@@ -1,5 +1,12 @@
 import { ThemeProvider } from "@emotion/react";
-import { CssBaseline, Grid, Paper } from "@mui/material";
+import {
+  AppBar,
+  CssBaseline,
+  Grid,
+  Paper,
+  Toolbar,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import { RecoilRoot } from "recoil";
 import { CSVDownload } from "./components/CSVDownload";
@@ -15,6 +22,14 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <RecoilRoot>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" noWrap component="div" flexGrow={1}>
+              Kalkulator wielkości ekonomicznej - SO
+            </Typography>
+            {toggleButton}
+          </Toolbar>
+        </AppBar>
         <Grid
           container
           alignSelf="center"
@@ -24,7 +39,6 @@ const App = () => {
           height="100%"
           paddingY="3em"
           justifyContent="center"
-          
         >
           <Grid
             container
@@ -39,7 +53,6 @@ const App = () => {
             justifyContent="center"
           >
             <Grid container item>
-              {toggleButton}
               <Intro />
             </Grid>
             <Grid container item>
