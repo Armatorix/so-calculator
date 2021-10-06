@@ -36,7 +36,7 @@ export function ProductionsTable() {
             <TableBody>
                 {
                     productions.map((production, i) => {
-                        return <TableRow>
+                        return <TableRow key={i}>
                             <TableCell>
                                 <Autocomplete
                                     id={`$productions-autocomplete-{i}`}
@@ -66,14 +66,10 @@ export function ProductionsTable() {
                                 </Typography>
                             </TableCell>
                             <TableCell>
-
                                 <TextField
                                     id="outlined-number"
                                     label="Ilość"
                                     type="number"
-                                    InputLabelProps={{
-                                        shrink: true,
-                                    }}
                                     defaultValue={production.amount}
                                     onChange={(v) => {
                                         setProductions(productions.slice(0, i)
@@ -94,7 +90,7 @@ export function ProductionsTable() {
 
                     })
                 }
-                <TableRow>
+                <TableRow key={-1}>
                     <TableCell>
                         Suma
                     </TableCell>

@@ -39,16 +39,10 @@ export default function useToggleColorMode() {
       createTheme(mode === lightTheme ? {
         palette: {
           mode: "light",
-          background: {
-            default: "#FFF",
-          },
         },
       }: {
         palette: {
           mode: "dark",
-          background: {
-            default: "#000",
-          },
         }
       }),
     [mode]

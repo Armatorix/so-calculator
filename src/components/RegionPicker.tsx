@@ -10,18 +10,19 @@ export function RegionPicker() {
                 Województwo
             </Typography>
         </Grid>
-        <Grid item xs={8}>
+        <Grid container item xs={8}>
             <Select
                 variant="outlined"
                 fullWidth
                 value={region.id}
+                defaultValue={Regions[0].id}
                 onChange={(e) => {
                     setRegion(Regions[Number(e.target.value)])
                 }}
             >
                 {
                     Regions.map((region) => {
-                        return <MenuItem value={region.id}>{region.name}</MenuItem>
+                        return <MenuItem key={region.id} value={region.id}>{region.name}</MenuItem>
                     })
                 }
             </Select>

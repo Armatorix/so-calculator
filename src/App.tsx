@@ -8,7 +8,6 @@ import { NewValueButton } from "./components/NewValueButton";
 import { ProductionsTable } from "./components/ProductionsTable";
 import { RegionPicker } from "./components/RegionPicker";
 import useToggleColorMode from "./components/ThemeToggle";
-import {ImportButton} from "./components/ImportButton";
 
 const App = () => {
   const [theme, toggleButton] = useToggleColorMode();
